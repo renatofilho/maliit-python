@@ -1,29 +1,34 @@
-project(python_plugin)
+project(pymaliit-plugin)
 
-set(python_plugin_SRC
-    minputmethodpythonplugin.cpp
-    minputmethodpythonplugin.h
+QT4_WRAP_CPP(pymaliit_MOC minputmethodpythonfactoryplugin.h OPTIONS -I${MALIIT_PLUGINS_INCLUDE_DIRS})
+
+set(pymaliit_SRC
+    minputmethodpythonfactoryplugin.cpp
+    minputmethodpythonfactoryplugin.h
+    ${pymaliit_MOC}
 )
 
-set(python_plugin_INCLUDE_DIRECTORIES
+set(pymaliit_INCLUDE_DIRECTORIES
     ${SHIBOKEN_INCLUDE_DIR}
     ${SHIBOKEN_PYTHON_INCLUDE_DIR}
+    ${QT_INCLUDE_DIR}
     ${QT_QTCORE_INCLUDE_DIR}
-    ${QT_QTGUI_INCLUDE_DIR}
     ${MALIIT_INCLUDE_DIRS}
+    ${MALIIT_PLUGINS_INCLUDE_DIRS}
 )
 
-set(python_plugin_LINK_LIBRARIES
+set(pymaliit_LINK_LIBRARIES
     ${SHIBOKEN_LIBRARY}
     ${SHIBOKEN_PYTHON_LIBRARIES}
     ${QT_QTCORE_LIBRARY}
-    ${QT_QTGUI_LIBRARY}
     ${MALIIT_LIBRARIES}
+    ${MALIIT_PLUGINS_LIBRARIES}
 )
 
-add_definitions(-DQT_SHARED)
-include_directories(python_plugin ${python_plugin_INCLUDE_DIRECTORIES})
-add_library(python_plugin SHARED ${python_plugin_SRC})
-target_link_libraries(python_plugin ${python_plugin_LINK_LIBRARIES})
+add_definitions(-DQT_PLUGIN)
+add_definitions(-DMALITT_PLUGINS_DIR="${MALITT_PLUGINS_DIR}")
+include_directories(pymaliit ${pymaliit_INCLUDE_DIRECTORIES})
+add_library(pymaliit SHARED ${pymaliit_SRC})
+target_link_libraries(pymaliit ${pymaliit_LINK_LIBRARIES})
 
-install(TARGETS python_plugin LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+install(TARGETS pymaliit LIBRARY DESTINATION ${MALITT_PLUGINS_DIR})

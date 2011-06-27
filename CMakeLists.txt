@@ -7,9 +7,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Macros/
 find_package(GeneratorRunner 0.6.10 REQUIRED)
 find_package(Shiboken 1.0.3 REQUIRED)
 find_package(Qt4 4.7.0 REQUIRED)
-find_package(PySide 1.0.0 REQUIRED)
+find_package(PySide 1.0.4 REQUIRED)
 find_package(PkgConfig)
-pkg_check_modules(MALIIT MeegoImFramework)
+pkg_check_modules(MALIIT maliit-0.80)
+pkg_check_modules(MALIIT_PLUGINS maliit-plugins-0.80)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE ${SHIBOKEN_BUILD_TYPE})
@@ -41,7 +42,7 @@ if (NOT SITE_PACKAGE)
     endif()
 endif()
 
-execute_process(COMMAND pkg-config --variable pluginsdir MeegoImFramework
+execute_process(COMMAND pkg-config --variable pluginsdir maliit-plugins-0.80
                 OUTPUT_VARIABLE MALITT_PLUGINS_DIR
                 OUTPUT_STRIP_TRAILING_WHITESPACE)
 message(STATUS "Maliit plugins dir: ${MALITT_PLUGINS_DIR}")
