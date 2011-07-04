@@ -1,0 +1,31 @@
+How to test this plugin:
+
+requiriments:
+    * shiboken              1.0.4
+    * pyside                qt4.7+1.0.4
+    * maliit-framework      git: d84821e518528e8d3da2162b7dc49dd4f730a23b
+        + path              https://gitorious.org/~renatofilho/maliit/renatofilhos-maliit-framework/commit/9c6c71647b633f96e3adab07ed5c81be6f65df04
+
+1.
+compile the project:
+    mkdir build
+    cd build
+    cmake ../
+    make
+    make install
+
+2.
+Register the python-factory plugin:
+    gconftool-2 -s /maliit/factories -t list --list-type strings [libpymaliit.so]
+
+3.
+Activet the python example plugin:
+    gconftool-2 -s /maliit/inputmethods/onscreen/enabled -t list --list-type strings [pymaliit.py,]
+    gconftool-2 -s /maliit/inputmethods/onscreen/active -t list --list-type strings [pymaliit.py,ExamplePluginSubview1]
+
+4.
+Now you can run maliit-server and your application.
+
+
+
+
