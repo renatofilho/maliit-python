@@ -44,6 +44,11 @@ set(maliit_LINK_LIBRARIES
     ${MALIIT_PLUGINS_LIBRARIES}
 )
 
+set(MALIIT_PLUGINS_INCLUDE_DIRS_FIX "")
+foreach(LOOP_FIX ${MALIIT_PLUGINS_INCLUDE_DIRS})
+    set(MALIIT_PLUGINS_INCLUDE_DIRS_FIX "${MALIIT_PLUGINS_INCLUDE_DIRS_FIX}:${LOOP_FIX}")
+endforeach(LOOP_FIX)
+
 include_directories(maliit ${maliit_INCLUDE_DIRECTORIES})
 add_library(maliit MODULE ${maliit_SRC})
 set_property(TARGET maliit PROPERTY PREFIX "")
@@ -53,7 +58,7 @@ add_custom_command(OUTPUT ${maliit_SRC}
                    COMMAND ${GENERATORRUNNER_BINARY}
                    --generatorSet=shiboken --enable-parent-ctor-heuristic --enable-pyside-extensions --enable-return-value-heuristic
                    ${CMAKE_CURRENT_SOURCE_DIR}/global.h
-                   --include-paths=${QT_INCLUDE_DIR}:${MALIIT_PLUGINS_INCLUDE_DIRS}
+                   --include-paths=${QT_INCLUDE_DIR}:${MALIIT_PLUGINS_INCLUDE_DIRS_FIX}
                    --typesystem-paths=${typesystem_path}:${PYSIDE_TYPESYSTEMS}
                    --output-directory=${CMAKE_CURRENT_BINARY_DIR}
                    ${CMAKE_CURRENT_SOURCE_DIR}/typesystem_maliit.xml

@@ -1,6 +1,12 @@
 project(pymaliit-plugin)
 
-QT4_WRAP_CPP(pymaliit_MOC minputmethodpythonfactoryplugin.h OPTIONS -I${MALIIT_PLUGINS_INCLUDE_DIRS})
+set(MALIIT_PLUGINS_INCLUDE_DIRS_FIX "")
+foreach(LOOP_FIX ${MALIIT_PLUGINS_INCLUDE_DIRS})
+    list(APPEND MALIIT_PLUGINS_INCLUDE_DIRS_FIX "-I${LOOP_FIX}")
+endforeach(LOOP_FIX)
+
+
+QT4_WRAP_CPP(pymaliit_MOC minputmethodpythonfactoryplugin.h OPTIONS ${MALIIT_PLUGINS_INCLUDE_DIRS_FIX})
 
 set(pymaliit_SRC
     minputmethodpythonfactoryplugin.cpp
