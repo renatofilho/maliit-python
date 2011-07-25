@@ -108,7 +108,7 @@ MInputMethodPythonFactoryPlugin::~MInputMethodPythonFactoryPlugin()
 {
 }
 
-QString MInputMethodPythonFactoryPlugin::mimeType() const
+QString MInputMethodPythonFactoryPlugin::fileExtension() const
 {
     return "py";
 }

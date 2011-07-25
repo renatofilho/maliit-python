@@ -14,24 +14,24 @@
 #ifndef M_INPUT_METHOD_PYTHON_FACTORY_PLUGIN
 #define M_INPUT_METHOD_PYTHON_FACTORY_PLUGIN
 
-#include <minputmethodfactoryplugin.h>
+#include <minputmethodpluginfactory.h>
 #include <minputmethodplugin.h>
 
 #include <QString>
 
 //! \brief Factory used to create QuickPlugins
 class MInputMethodPythonFactoryPlugin
-    : public QObject, public MInputMethodFactoryPlugin
+    : public QObject, public MInputMethodPluginFactory
 {
     Q_OBJECT
-    Q_INTERFACES(MInputMethodFactoryPlugin)
+    Q_INTERFACES(MInputMethodPluginFactory)
 
 public:
     MInputMethodPythonFactoryPlugin();
     virtual ~MInputMethodPythonFactoryPlugin();
 
     //! \reimp
-    virtual QString mimeType() const;
+    virtual QString fileExtension() const;
     virtual MInputMethodPlugin* create(const QString &fileName) const;
     //! \reimp_end
 

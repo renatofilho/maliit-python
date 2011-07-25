@@ -37,4 +37,4 @@ include_directories(pymaliit ${pymaliit_INCLUDE_DIRECTORIES})
 add_library(pymaliit SHARED ${pymaliit_SRC})
 target_link_libraries(pymaliit ${pymaliit_LINK_LIBRARIES})
 
-install(TARGETS pymaliit LIBRARY DESTINATION ${MALITT_PLUGINS_DIR})
+install(TARGETS pymaliit LIBRARY DESTINATION ${MALITT_FACTORY_PLUGINS_DIR})

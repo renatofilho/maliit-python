@@ -42,9 +42,14 @@ if (NOT SITE_PACKAGE)
     endif()
 endif()
 
+execute_process(COMMAND pkg-config --variable factorypluginsdir maliit-plugins-0.80
+                OUTPUT_VARIABLE MALITT_FACTORY_PLUGINS_DIR
+                OUTPUT_STRIP_TRAILING_WHITESPACE)
+
 execute_process(COMMAND pkg-config --variable pluginsdir maliit-plugins-0.80
                 OUTPUT_VARIABLE MALITT_PLUGINS_DIR
                 OUTPUT_STRIP_TRAILING_WHITESPACE)
+
 message(STATUS "Maliit plugins dir: ${MALITT_PLUGINS_DIR}")
 
 set(GENERATOR_EXTRA_FLAGS --generator-set=shiboken --enable-parent-ctor-heuristic --enable-pyside-extensions --enable-return-value-heuristic --use-isnull-as-nb_nonzero)
