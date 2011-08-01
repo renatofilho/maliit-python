@@ -14,17 +14,17 @@
 #ifndef M_INPUT_METHOD_PYTHON_FACTORY_PLUGIN
 #define M_INPUT_METHOD_PYTHON_FACTORY_PLUGIN
 
-#include <minputmethodpluginfactory.h>
+#include <mimabstractpluginfactory.h>
 #include <minputmethodplugin.h>
 
 #include <QString>
 
 //! \brief Factory used to create QuickPlugins
 class MInputMethodPythonFactoryPlugin
-    : public QObject, public MInputMethodPluginFactory
+    : public QObject, public MImAbstractPluginFactory
 {
     Q_OBJECT
-    Q_INTERFACES(MInputMethodPluginFactory)
+    Q_INTERFACES(MImAbstractPluginFactory)
 
 public:
     MInputMethodPythonFactoryPlugin();
