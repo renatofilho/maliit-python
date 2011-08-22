@@ -49,6 +49,7 @@ foreach(LOOP_FIX ${MALIIT_PLUGINS_INCLUDE_DIRS})
     set(MALIIT_PLUGINS_INCLUDE_DIRS_FIX "${MALIIT_PLUGINS_INCLUDE_DIRS_FIX}:${LOOP_FIX}")
 endforeach(LOOP_FIX)
 
+link_directories(${MALIIT_LIBRARY_DIRS})
 include_directories(maliit ${maliit_INCLUDE_DIRECTORIES})
 add_library(maliit MODULE ${maliit_SRC})
 set_property(TARGET maliit PROPERTY PREFIX "")
@@ -61,6 +62,7 @@ add_custom_command(OUTPUT ${maliit_SRC}
                    --include-paths=${QT_INCLUDE_DIR}:${MALIIT_PLUGINS_INCLUDE_DIRS_FIX}
                    --typesystem-paths=${typesystem_path}:${PYSIDE_TYPESYSTEMS}
                    --output-directory=${CMAKE_CURRENT_BINARY_DIR}
+                   --api-version="maliit*,${MALIIT_VERSION}|PySide*,${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}"
                    ${CMAKE_CURRENT_SOURCE_DIR}/typesystem_maliit.xml
                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                    COMMENT "Running generator for maliit..."
