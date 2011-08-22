@@ -20,8 +20,8 @@ Register the python-factory plugin:
 
 3.
 Activet the python example plugin:
-    gconftool-2 -s /maliit/inputmethods/onscreen/enabled -t list --list-type strings [pymaliit.py,]
-    gconftool-2 -s /maliit/inputmethods/onscreen/active -t list --list-type strings [pymaliit.py,ExamplePluginSubview1]
+    gconftool-2 -s /maliit/onscreen/enabled -t list --list-type strings [pymaliit.py,]
+    gconftool-2 -s /maliit/onscreen/active -t list --list-type strings [pymaliit.py,ExamplePluginSubview1]
 
 4.
 Now you can run maliit-server and your application.
