@@ -9,7 +9,7 @@ find_package(Shiboken 1.0.3 REQUIRED)
 find_package(Qt4 4.7.0 REQUIRED)
 find_package(PySide 1.0.4 REQUIRED)
 find_package(PkgConfig)
-pkg_check_modules(MALIIT maliit-0.80)
+pkg_check_modules(MALIIT maliit-1.0)
 pkg_check_modules(MALIIT_PLUGINS maliit-plugins-0.80)
 
 if(NOT CMAKE_BUILD_TYPE)

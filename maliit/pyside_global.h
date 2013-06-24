@@ -22,7 +22,7 @@
 #undef QT_NO_STL_WCHAR
 #define Q_BYTE_ORDER // used to enable QSysInfo.Endian detection on MacOSX
 
-#include "/usr/include/qt4/QtCore/qnamespace.h"
+#include "QtCore/qnamespace.h"
 
 QT_BEGIN_HEADER
 
@@ -329,46 +329,46 @@ QT_END_HEADER
 // not in release
 #define QT_NO_DEBUG
 
-#include "/usr/include/qt4/QtCore/QtCore"
+#include "QtCore/QtCore"
 #if 0 || 0
   // Workaround to parse the QApplication header
   #define Q_INTERNAL_QAPP_SRC
   #undef qdoc
 #endif
-#include "/usr/include/qt4/QtGui/QtGui"
+#include "QtGui/QtGui"
 #include "qpytextobject.h"  // PySide class
 #if 1
-  #include "/usr/include/qt4/QtGui/QX11Info"
-  #include "/usr/include/qt4/QtGui/QX11EmbedContainer"
-  #include "/usr/include/qt4/QtGui/QX11EmbedWidget"
+  #include "QtGui/QX11Info"
+  #include "QtGui/QX11EmbedContainer"
+  #include "QtGui/QX11EmbedWidget"
 #elif 0
-  #include "/usr/include/qt4/QtGui/qmacstyle_mac.h"
+  #include "QtGui/qmacstyle_mac.h"
 #endif
-#include "/usr/include/qt4/QtXml/QtXml"
-#include "/usr/include/qt4/QtUiTools/QtUiTools"
-#include "/usr/include/qt4/QtNetwork/QtNetwork"
-#include "/usr/include/qt4/QtScript/QtScript"
-#include "/usr/include/qt4/QtScriptTools/QtScriptTools"
-#include "QT_QTMULTIMEDIA_INCLUDE_DIR-NOTFOUND/QtMultimedia"
+#include "QtXml/QtXml"
+#include "QtUiTools/QtUiTools"
+#include "QtNetwork/QtNetwork"
+#include "QtScript/QtScript"
+#include "QtScriptTools/QtScriptTools"
+#include "QtMultimedia/QtMultimedia"
 #include <QtMaemo5/QtMaemo5>
-#include "/usr/include/qt4/QtDeclarative/QtDeclarative"
+#include "QtDeclarative/QtDeclarative"
 
 // QT_GUI_LIB must be defined to QSqlRelationalDelegate become visible
 #define QT_GUI_LIB
 #undef Q_DECLARE_INTERFACE
-#include "/usr/include/qt4/QtSql/QtSql"
-#include "/usr/include/qt4/QtSvg/QtSvg"
+#include "QtSql/QtSql"
+#include "QtSvg/QtSvg"
 
 #if 1
-#  include "/usr/include/qt4/QtXmlPatterns/QtXmlPatterns"
+#  include "QtXmlPatterns/QtXmlPatterns"
 #endif
 
 #if 1
-#  include "/usr/include/qt4/QtWebKit/QtWebKit"
+#  include "QtWebKit/QtWebKit"
 #endif
 
 #if 1
-#  include "/usr/include/qt4/QtTest/QtTest"
+#  include "QtTest/QtTest"
 #if 7 > 5
 #  include "pysideqtesttouch.h"
 #endif
@@ -376,44 +376,44 @@ QT_END_HEADER
 
 // Phonon
 #include "phonon/pyside_phonon.h"
-#include "/usr/include/qt4/phonon/abstractaudiooutput.h"
-#include "/usr/include/qt4/phonon/abstractmediastream.h"
-#include "/usr/include/qt4/phonon/abstractvideooutput.h"
-#include "/usr/include/qt4/phonon/addoninterface.h"
-#include "/usr/include/qt4/phonon/audiooutput.h"
-#include "/usr/include/qt4/phonon/audiooutputinterface.h"
-#include "/usr/include/qt4/phonon/backendcapabilities.h"
-#include "/usr/include/qt4/phonon/backendinterface.h"
-#include "/usr/include/qt4/phonon/effect.h"
-#include "/usr/include/qt4/phonon/effectinterface.h"
-#include "/usr/include/qt4/phonon/effectparameter.h"
-#include "/usr/include/qt4/phonon/effectwidget.h"
-#include "/usr/include/qt4/phonon/mediacontroller.h"
-#include "/usr/include/qt4/phonon/medianode.h"
-#include "/usr/include/qt4/phonon/mediaobject.h"
-#include "/usr/include/qt4/phonon/mediaobjectinterface.h"
-#include "/usr/include/qt4/phonon/mediasource.h"
-#include "/usr/include/qt4/phonon/objectdescription.h"
-#include "/usr/include/qt4/phonon/objectdescriptionmodel.h"
-#include "/usr/include/qt4/phonon/path.h"
-#include "/usr/include/qt4/phonon/phonon_export.h"
-#include "/usr/include/qt4/phonon/phonondefs.h"
-#include "/usr/include/qt4/phonon/phononnamespace.h"
-#include "/usr/include/qt4/phonon/platformplugin.h"
-#include "/usr/include/qt4/phonon/seekslider.h"
-#include "/usr/include/qt4/phonon/streaminterface.h"
-#include "/usr/include/qt4/phonon/videoplayer.h"
-#include "/usr/include/qt4/phonon/videowidget.h"
-#include "/usr/include/qt4/phonon/videowidgetinterface.h"
-#include "/usr/include/qt4/phonon/volumefadereffect.h"
-#include "/usr/include/qt4/phonon/volumefaderinterface.h"
-#include "/usr/include/qt4/phonon/volumeslider.h"
+#include "phonon/abstractaudiooutput.h"
+#include "phonon/abstractmediastream.h"
+#include "phonon/abstractvideooutput.h"
+#include "phonon/addoninterface.h"
+#include "phonon/audiooutput.h"
+#include "phonon/audiooutputinterface.h"
+#include "phonon/backendcapabilities.h"
+#include "phonon/backendinterface.h"
+#include "phonon/effect.h"
+#include "phonon/effectinterface.h"
+#include "phonon/effectparameter.h"
+#include "phonon/effectwidget.h"
+#include "phonon/mediacontroller.h"
+#include "phonon/medianode.h"
+#include "phonon/mediaobject.h"
+#include "phonon/mediaobjectinterface.h"
+#include "phonon/mediasource.h"
+#include "phonon/objectdescription.h"
+#include "phonon/objectdescriptionmodel.h"
+#include "phonon/path.h"
+#include "phonon/phonon_export.h"
+#include "phonon/phonondefs.h"
+#include "phonon/phononnamespace.h"
+#include "phonon/platformplugin.h"
+#include "phonon/seekslider.h"
+#include "phonon/streaminterface.h"
+#include "phonon/videoplayer.h"
+#include "phonon/videowidget.h"
+#include "phonon/videowidgetinterface.h"
+#include "phonon/volumefadereffect.h"
+#include "phonon/volumefaderinterface.h"
+#include "phonon/volumeslider.h"
 
 //QtHelp need be included after QtSql
-#include "/usr/include/qt4/QtHelp/QtHelp"
+#include "QtHelp/QtHelp"
 
 #ifndef QT_NO_OPENGL
 #include </usr/include/GL/gl.h>
-#include </usr/include/qt4/QtOpenGL/QtOpenGL>
+#include <QtOpenGL/QtOpenGL>
 #endif // QT_NO_OPENGL
 

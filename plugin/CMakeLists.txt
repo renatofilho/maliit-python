@@ -33,6 +33,7 @@ set(pymaliit_LINK_LIBRARIES
 
 add_definitions(-DQT_PLUGIN)
 add_definitions(-DMALITT_PLUGINS_DIR="${MALITT_PLUGINS_DIR}")
+link_directories(${MALIIT_LIBRARY_DIRS})
 include_directories(pymaliit ${pymaliit_INCLUDE_DIRECTORIES})
 add_library(pymaliit SHARED ${pymaliit_SRC})
 target_link_libraries(pymaliit ${pymaliit_LINK_LIBRARIES})
